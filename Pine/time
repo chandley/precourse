@@ -1,0 +1,6 @@
+a = time
+puts time
+b = time (2011,1,1,12,45,14)
+puts b
+diff = b -a
+puts diff.to_s
