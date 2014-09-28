@@ -39,6 +39,11 @@ class Room < Dungeon_thing
 		@items.push item
 	end
 
+	def get_item
+		#problem accessing inventory as other room - return item
+		@items.pop
+	end
+
 	def describe
 		super
 		@exits.each do |direction,room|
@@ -68,7 +73,7 @@ class Dungeon_item   < Dungeon_thing
 	end
 
 	def describe
-		print @description, ", it weights #{@weight}"
+		print @description, ", weight #{@weight}\n"
 	end
 
 end
@@ -100,5 +105,13 @@ current_room = current_room.move 'D'
 current_room = current_room.move 'W'
 current_room.describe
 puts ''
+puts ''
+inventory.describe
+current_room.add_item inventory.get_item
+inventory.describe
+inventory.add_item current_room.get_item 
+inventory.add_item current_room.get_item
+inventory.describe
 
+#current_room.get_item(0)
 #inventory.describe
