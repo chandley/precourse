@@ -62,10 +62,15 @@ class Room < Dungeon_thing
 end
 
 class Dungeon_item   < Dungeon_thing
-	def initialize description #, weight
-		super
-#		@weight = weight
+	def initialize description , weight
+		super(description)
+		@weight = weight
 	end
+
+	def describe
+		print @description, ", it weights #{@weight}"
+	end
+
 end
 
 #initialise dungeon
@@ -85,8 +90,8 @@ my_dungeon.rooms[1].add_exit 'W', my_dungeon.rooms[3]
 my_dungeon.rooms[3].add_exit 'E', my_dungeon.rooms[1]
 
 #add items
-my_dungeon.rooms[3].add_item Dungeon_item.new 'a rusty saucepan' #, 10
-inventory.add_item Dungeon_item.new 'a boiled sweet covered in pocket fluff'#, 1
+my_dungeon.rooms[3].add_item Dungeon_item.new 'a rusty saucepan' , 10
+inventory.add_item Dungeon_item.new 'a boiled sweet covered in pocket fluff', 1
 
 #test dungeon
 current_room = my_dungeon.rooms[1]
