@@ -1,4 +1,4 @@
-# __repo_name__
+# precourse
 
 [![Test Coverage](https://codeclimate.com/github/chandley/precourse/badges/coverage.svg)](https://codeclimate.com/github/chandley/precourse)
 [![Code Climate](https://codeclimate.com/github/chandley/precourse/badges/gpa.svg)](https://codeclimate.com/github/chandley/precourse)
